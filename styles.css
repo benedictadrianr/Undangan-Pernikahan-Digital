@@ -28,7 +28,7 @@ body{
     min-height: 100vh;
 }
 
-.hero h1, .hero h4, .hero p{
+.hero h1, .hero h4, .hero p, .hero h2{
     text-shadow: var(--shadow);
 }
 
@@ -55,6 +55,7 @@ body{
 .hero a:hover{
     background-color: var(--pink);
     color: white;
+    scale: 1.05;
 }
 
 .mynavbar{
@@ -86,7 +87,11 @@ body{
 }
 
 .home h2,
-.info h2{
+.info h2,
+.story h2,
+.gallery h2,
+.rsvp h2,
+.gifts h2{  
     color: var(--pink);
     font-family: 'Sacramento';
     font-size: 5rem;
@@ -140,10 +145,11 @@ body{
     color: white;
     padding-top: 7rem;
     padding-bottom: 5rem;
+    min-height: 100vh;
 }
 
 .info .card{
-    font-size: 1rem;
+    font-size: 1.2rem;
     background-color: rgba(255, 255, 255, 0.2) !important;
     color: white !important;
     border: 1px solid #999;
@@ -157,7 +163,7 @@ body{
 }
 
 .card-footer a{
-    font-size: 0.9rem;  
+    font-size: 1.1rem;  
 }
 
 .info .description{
@@ -166,6 +172,207 @@ body{
 
 .lokasi{
     width: 80%;
+}
+
+.gallery{
+    min-height: 100vh;
+    background: url(img/bg2.png);
+    background-size: cover; 
+    background-repeat: no;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery p,
+.story p,
+.rsvp p,
+.gifts p{
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.carousel{
+    margin: 2rem;
+}
+
+.carousel-inner{
+    width: 550px;
+    box-shadow: 0 10px 4px grey;
+}
+
+.carousel-item{
+    transition: all 0.5s ease-in-out;
+    justify-content: center;
+}
+
+.story,
+.gallery,
+.rsvp,
+.gifts{
+    padding-top: 10rem;
+    padding-bottom: 8rem;
+}
+
+.story span,
+.gallery span{
+    text-transform: uppercase;
+    color: #666;
+    font-size: 0.9rem;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.timeline{
+    list-style: none;
+    padding: 1.4rem 0;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.timeline::before{
+    content: '';
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    width: 1px;
+    background-color: #ccc;
+    left: 50%;
+}
+
+.timeline li{
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.timeline li::before,
+.timeline li::after{
+    content: '';
+    display: table;
+}
+
+.timeline li::after{
+    clear: both;
+}
+
+.timeline li .timeline-image{
+    width: 160px;
+    height: 160px;
+    background-color: #ccc;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.timeline li .timeline-panel{
+    width: 40%;
+    float: left;
+    border: 1px solid #ccc;
+    padding: 2rem;
+    position: relative;
+    border-radius: 8px;   
+    background-color: #fff;
+}
+
+.timeline li .timeline-panel::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 70px;
+    right: -28px;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-left: 15px solid white;
+    border-top: 15px solid transparent;
+}
+
+.timeline li .timeline-panel::after{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    border-bottom: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-left: 14px solid #ccc;
+    border-top: 14px solid transparent;
+    top: 71px;
+    right: -29px;
+    z-index: -1;
+}
+
+.timeline li.timeline-inverted .timeline-panel{
+    float: right;
+}
+
+.timeline li.timeline-inverted .timeline-panel::before{
+    left: -28px;
+    right: auto;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid white;
+    border-left: 15px solid transparent;
+    border-top: 15px solid transparent;
+}
+
+.timeline li.timeline-inverted .timeline-panel::after{
+    border-bottom: 14px solid transparent;
+    border-right: 14px solid #ccc;
+    border-left: 14px solid transparent;
+    border-top: 14px solid transparent;
+    top: 71px;
+    left: -29px;
+    right: auto;
+    z-index: -1;
+}
+
+.rsvp{
+    background-color: var(--bg);
+}
+
+.rsvp p{
+    color: white;
+}
+
+.rsvp form label{
+    color: white;
+}
+
+.rsvp button{
+    background-color: var(--pink);
+    color: white;
+    border: 1px solid var(--pink);
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.rsvp button:hover{
+    background-color: white;
+    color: var(--pink);
+    border: 1px solid white;
+}
+
+footer{
+    padding: 3rem;
+    background-color: var(--pink);
+    color: white;
+}
+
+footer a{
+    color: var(--bg);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: white;
+}
+
+footer li{
+    list-style: none;
+    display: inline;
+    margin: 0.5rem;
 }
 
 /* Media Query */
@@ -181,7 +388,7 @@ body{
 
 @media(max-width: 992px){
     html{
-        font-size: 75%;
+        font-size: 80%;
     }
 
     .simply-countdown > .simply-section{
@@ -191,13 +398,56 @@ body{
     .home .heart{
         display: none;
     }
+
+    .carousel-inner{
+        width: 500px;
+    }
+
+    .timeline::before{
+        left: 60px;
+    }
+
+    .timeline li .timeline-image{
+        left: 15px;
+        margin-left: 45px;
+        top: 16px;
+    }
+
+    .timeline li .timeline-panel{
+        width: calc((100% - 200px));
+        float: right;
+    }
+
+    .timeline li .timeline-panel::before{
+        left: -28px;
+        right: auto;
+        border-bottom: 15px solid transparent;
+        border-right: 15px solid white;
+        border-left: 15px solid transparent;
+        border-top: 15px solid transparent;
+    }
+
+    .timeline li .timeline-panel::after{
+        left: -30px;
+        top: 70px;
+        right: auto;
+        border-bottom: 15px solid transparent;
+        border-right: 15px solid #ccc;
+        border-left: 15px solid transparent;
+        border-top: 15px solid transparent;
+    }
+
+    .timeline li.timeline-inverted .timeline-panel::after{
+        left: -28px;
+    }
 }
 
 /* Tablet */
 
 @media(max-width: 768px){
     html{
-        font-size: 65%
+        font-size: 75%;
+
     }
 
     .simply-countdown > .simply-section{
@@ -208,16 +458,38 @@ body{
         font-size: 2rem;
         text-align: center;
     }
+
+    .sticky-top{
+        overflow: hidden;
+    }
+
+    .carousel-inner{
+        width: 450px;
+    }
+
+    .timeline li .timeline-image{
+        width: 140px;
+        height: 140px;
+    }
 }
 
 /* Mobile Phone */
 
 @media(max-width: 576px){
     html{
-        font-size: 60%
+        font-size: 70%;
     }
 
     .simply-countdown > .simply-section{
         padding: 30px;
+    }
+
+    .carousel-inner{
+        width: 400px;
+    }
+
+    .timeline li .timeline-panel{
+        width: 65%;
+        transform: translateX(-10px);
     }
 } 
