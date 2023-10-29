@@ -37,12 +37,17 @@ body{
     font-size: 6rem;
 }
 
+.hero h2{
+    font-size: 2.7rem;
+    letter-spacing: 1px;
+}
+
 .hero h4{
-    font-size: 1.6rem;
+    font-size: 1.7rem;
 }
 
 .hero p{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
 .hero a{
@@ -153,6 +158,7 @@ body{
     background-color: rgba(255, 255, 255, 0.2) !important;
     color: white !important;
     border: 1px solid #999;
+    height: 307px;
 }
 
 .card-header{
@@ -375,12 +381,44 @@ footer li{
     margin: 0.5rem;
 }
 
+.audio-icon-wrapper{
+    width: 4rem;
+    height: 4rem;
+    font-size: 4rem;
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2rem;
+    cursor: pointer;
+    color: white;
+    opacity: 0.5;
+    mix-blend-mode: difference;
+    animation: rotating 4s linear infinite;
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+}
+
+@keyframes rotating {
+    form{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
 /* Media Query */
 /* Extra Large */
 
 @media(max-width: 1200px){
     .home .heart{
         transform: translateX(-50%) translateY(45px);
+    }
+
+    .info .card{
+        height: auto;
     }
 }
 
