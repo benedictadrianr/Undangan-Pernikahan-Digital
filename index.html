@@ -50,7 +50,6 @@
               <a class="nav-link" href="#home">Home</a>
               <a class="nav-link" href="#info">Info</a>
               <a class="nav-link" href="#gallery">Gallery</a>
-              <a class="nav-link" href="#story">Story</a>
               <a class="nav-link" href="#rsvp">RSVP</a>
               <a class="nav-link" href="#gifts">Gifts</a>
             </div>
@@ -64,16 +63,16 @@
         <div class="row justify-content-center">
           <div class="col-md-9 text-center">
             <h2>Countdown</h2>
-            <div class="simply-countdown"></div>
+            <div class="simply-countdown hidden"></div>
             <p>Dengan segala hormat kami bermaksud untuk mengundang Bapak/Ibu, Saudara/i, untuk hadir pada acara pernikahan kami.</p>
           </div>
         </div>
 
         <div class="row couple">
-          <div class="col-lg-6">
+          <div class="col-lg-6 hidden">
             <div class="row">
               <div class="col-8 text-end">
-                <h3>Yosef Andries Salim</h3>
+                <h3 class="nama-mempelai">Yosef Andries Salim</h3>
                 <p>Putra dari Bpk (Alm.)Eusibius Alip Salim<br> dan <br> Ibu Serenia Tjiu Nyuk Sin</p>
               </div>
               <div class="col-4">
@@ -82,15 +81,15 @@
             </div>
           </div>
 
-          <span class="heart"><i class="bi bi-heart-fill"></i></span>
+          <!-- <span class="heart"><i class="bi bi-heart-fill"></i></span> -->
 
-          <div class="col-lg-6">
+          <div class="col-lg-6 hidden">
             <div class="row">
               <div class="col-4">
                 <img src="img/selvy.png" alt="selvy" class="img-responsive rounded-circle">
               </div>
               <div class="col-8">
-                <h3>Secillia Bernadette Selvy Monanta</h3>
+                <h3 class="nama-mempelai">Secillia Bernadette Selvy Monanta</h3>
                 <p>Putri dari Bpk (Alm.)David Nyoto <br> dan <br> Ibu (Almh.)Indawati Nyoto</p>
               </div>
             </div>
@@ -106,7 +105,7 @@
           <div class="col-md-8 col-10 text-center mb-4">
             <h2>Informasi Acara</h2>
           </div>
-          <div class="col-lg-6 col-md-6 col-11 mt-4 misa-container">
+          <div class="col-lg-6 col-md-6 col-11 mt-4 misa-container hidden">
             <div class="card text-center text-bg-light mb-4">
               <div class="card-header">
                 Misa Pemberkatan
@@ -133,7 +132,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-11 mt-4 syukuran-container">
+          <div class="col-lg-6 col-md-6 col-11 mt-4 syukuran-container hidden">
             <div class="card text-center text-bg-light mb-4">
               <div class="card-header">
                 Syukuran Pernikahan
@@ -162,7 +161,7 @@
             
           </div>
           <div class="description text-center mt-4">
-            Mohon perhatian nya supaya tidak salah jadwal bahwa sakramen pernikahan akan di adakan 1 hari sebelum resepsi pernikahan di lakukan!
+            Mohon perhatian nya supaya tidak salah jadwal bahwa Misa Pemberkatan akan di adakan 1 hari sebelum Syukuran Pernikahan di lakukan!
           </div>
         </div>
       </div>
@@ -179,7 +178,7 @@
         </div>
       </div>
 
-      <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div id="galleryCarousel" class="carousel slide hidden hidden-left" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="img/Andreas 1.jpg" class="d-block w-100" alt="gallery1">
@@ -208,7 +207,7 @@
       </div>
     </section>
 
-    <section id="story" class="story">
+    <!-- <section id="story" class="story">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
@@ -259,7 +258,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section id="rsvp" class="rsvp">
       <div class="container">
@@ -278,18 +277,19 @@
             </div>
             <div class="mb-3">
               <label for="jumlah" class="form-label">Jumlah Tamu</label>
-              <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1" value="1">
+              <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="9" length="1" value="1">
             </div>
             <div class="mb-3">
               <label for="status" class="form-label">Konfirmasi</label>
               <select required name="status" id="status" class="form-select">
                 <option value="" disabled selected>Pilih Salah Satu</option>
-                <option value="Hadir">Hadir</option>
-                <option value="Tidak Hadir">Tidak Hadir</option>
+                <option value="Hadir">Iya, Saya akan Datang</option>
+                <option value="Ragu">Saya Masih Ragu</option>
+                <option value="Tidak Hadir">Maaf, saya Tidak Bisa Datang</option>
               </select>
             </div>
             <div class="mb-3">
-              <label for="message" class="form-label">Ucapan Syukur <span style="color: #4d4d4d;">(Optional)</span></label>
+              <label for="message" class="form-label">Ucapan Syukur <span style="color: #6e6e6e;">(Optional)</span></label>
               <textarea class="form-control form-ucapan" name="message" id="message" cols="30" rows="5" placeholder="Congratulations on your Wedding!"></textarea>
             </div>
             <div class="col-12 d-flex justify-content-center gap-4">
@@ -304,14 +304,14 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-10 text-center">
-            <span>Ungkapan Tanda Kasih</span>
+            <span class="header-title">Ungkapan Tanda Kasih</span>
             <h2>Kirim Hadiah</h2>
             <p>Andaikala Anda dan Keluarga Berhalangan untuk Hadir, Anda Tetap Dapat Mengirimkan Kasih dan Hadiah Melalui Kontak di Bawah Ini </p>
           </div>
 
           <div class="row justify-content-center text-center">
             <div class="col-md-6">
-              <ul class="list-group">
+              <ul class="list-group list-kontak">
                 <li class="list-group-item">
                   <span class="fw-bold">BCA</span><br>
                   8680081868 - ANDRIES
@@ -319,6 +319,10 @@
                 <li class="list-group-item">
                   <span class="fw-bold">MANDIRI</span><br>
                   1550010616061 - ANDRIES
+                </li>
+                <li class="list-group-item">
+                  <span class="fw-bold">GO-PAY</span><br>
+                  082258688850 - ANDRIES
                 </li>
                 <li class="list-group-item">
                   <span class="fw-bold">WHATSAPP</span><br>
@@ -360,6 +364,12 @@
       <div class="audio-icon-wrapper" style="display: none;">
         <i class="bi bi-disc"></i>
       </div>
+    </div>
+
+    <div id="arrow-icon-wrapper" class="to-top">
+      <a href="#home">
+        <i class="bi text-white bi-arrow-up-square"></i>
+      </a>
     </div>
 
     <!-- link to bootstrap javascript -->
@@ -483,6 +493,34 @@
       namaContainer.innerText = `${pronoun} ${nama}`.replace(/ ,$/, ',');
 
       document.querySelector('#nama').value = nama;
+    </script>
+
+    <!-- animation on scroll -->
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) =>{
+          console.log(entry);
+          if(entry.isIntersecting){
+            entry.target.classList.add('show');
+          }
+        });
+      });
+
+      const hiddenElements = document.querySelectorAll('.hidden');
+      hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+
+    <!-- to top button -->
+    <script>
+      const toTop = document.querySelector('.to-top');
+
+      window.addEventListener('scroll', () => {
+        if(window.pageYOffset > 1200){
+          toTop.classList.add('active');
+        }else{
+          toTop.classList.remove('active');
+        }
+      });
     </script>
   </body>
 </html>
